@@ -1,0 +1,448 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     *{
+        margin: 0;
+        padding: 0%;
+    } 
+
+    body{
+        background-color:sandybrown;
+    }
+    #homePage{
+        /* display: none; */
+    }
+    .topBar{
+        display: flex;
+        padding:10px;
+        background-color:purple;
+        width: 1fr;
+        height:50px;
+        justify-content:space-around;
+        align-items: center;
+        color: wheat;
+        font-size: 15px;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+    .navLink{
+        display: flex;
+        flex: 1;
+        justify-content:space-evenly;
+        align-items: center;
+    }
+    .navLink ul li{
+        display: inline;
+        list-style: none;
+        margin:30px;
+    }
+    .navLink button{
+        height: 40px;
+        width: 50px;
+    }
+    .searchBlock{
+        height:30px;
+        width: 30%;
+    }
+    .searchBlock img{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        padding-left: 8px;
+        padding-top: 7px; 
+        
+    }
+    .searchBlock #search{
+        --widPer:20;
+        height:40px;
+        width: calc(var(--widPer)*1%);
+        border-radius: 20px;
+        background-color: skyblue;
+        padding-left: 40px;
+        color: whitesmoke;
+        font-size: 15px;
+        border: none;
+        transition: 1s;
+    }
+
+    .navLink .signIn{
+        background-color: yellow;
+        border: none;
+        font-weight: bold;
+    }
+    .navLogo img{
+        height: 50px;
+        width: 40px;
+        padding-right: 40px;
+    }
+    .cart{
+        height:60px;
+        width:50px;
+        padding-top: 10px;
+        position: relative;
+    }
+    .cart img{
+        height: 90%;
+        width: 90%;
+    }
+    #cartQuantity{
+         position: absolute;
+         color: white;
+         top:5px;
+         left:20px;
+         bottom: 90%;
+         font-size: 20px;
+    }
+    .lowerTopBar{
+        width:1fr;
+        height:40px;
+        background-color:violet;
+        display:flex;
+        justify-content: center;
+        font-family: sans-serif;
+    }
+    .lowerTopBar ul{
+        width:60%;
+        height: 80%;
+        display: flex;
+        list-style: none;
+        justify-content:space-evenly
+    }
+    .lowerTopBar ul li{
+        flex:2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:brown;
+        font-weight: bolder;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .lowerTopBar ul li:hover{
+        transition: 1s;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border:2px solid whitesmoke;
+        background-color:darkslategray;
+        font-size: 25px;
+        color:chartreuse;
+    }
+
+    .advertise{
+        height:300px;
+        width: 1fr;
+        background-color: red;
+        margin:8px;
+        position: relative;
+    }
+    .advertise img{
+        height:100%;
+        width:100%;
+    }
+    .advertDot{
+            height:5px;
+            width:45px;
+            background-color:darkkhaki;
+            display: block;
+            position:absolute; 
+            border-radius: 40px;
+    }
+     #adv0{
+        top:90%;
+        left:40%;
+    }
+     #adv1{
+        top:90%;
+        left:45%;
+    }
+     #adv2{
+        top:90%;
+        left:50%;
+    }
+     #adv3{
+        top:90%;  
+        left:55%;
+    }
+    .products{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 70vh 1fr ;
+        grid-gap: 30px;
+        margin:20px;
+    }
+     .products #product1{
+         height:100%;
+         width: 100%;
+         background-color: snow;
+         border:2px solid black;
+         display: grid;
+         grid-template-columns: 50% 50%;
+         grid-template-rows: 10% 45% 45%;
+         grid-gap: 4px;
+         box-shadow: 10px 10px rgba(0,0,0,0.1);
+     }
+     .products #product1 #desc{
+         font-size: 20px;;
+         color:slateblue;
+         font-weight: bold;
+         grid-column: 1/-1;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+     }
+     .products #product1 #part1 img{
+           width: 90%;
+           height: 90%;
+           margin-left: 20px;
+     }
+     .products #product1 #part2 img{
+           width: 90%;
+           height: 90%;
+           margin-right: 20px;
+     }
+
+     .products #product1 #part3 img{
+           width: 90%;
+           height: 90%;
+           margin-bottom: 20px;
+     }
+     .products #product2{
+        height:100%;
+         width: 100%;
+         background-color:tomato;
+    }
+    .products #product3{
+        height:100%;
+         width:100%;
+         background-color:slateblue;
+    }
+    .products #product4{
+        height:100%;
+         width: 100%;
+         background-color:sienna;
+    }
+    .products #product5{
+        height:100%;
+         width:100%;
+         background-color:salmon;
+    }
+    .products #product6{
+        height:100%;
+         width:100%;
+         background-color:seagreen;
+    }
+
+    #hiddenBody{
+        position: relative;
+        background-color:darkgreen;
+        width: 100%;
+        height: 80vh;
+        display: none;
+    }
+    #mobilePage{
+        position: absolute;
+        background-color:aqua;
+        width: 100%;
+        height: 80vh;
+        z-index:0;
+    }
+    #electronicsPage{
+        position: absolute;
+        background-color: crimson;
+        width: 100%;
+        height: 80vh;
+        z-index: 0;
+    }
+
+</style>
+<body>
+    <div id="homePage">
+
+     <div class="topBar">
+        <div class="navLogo">
+            <img src="img/iconfinder__shopping_1156660.png" alt="">
+        </div>
+        <div class="searchBlock">
+            <img src="img/iconfinder_search_322497.png" alt="">
+            <input type="text" id="search">
+       </div>
+        <div class="navLink">
+            <ul>
+                <li>HOME </li>
+                <li>ABOUT </li>
+                <li>ORDERS</li>
+            </ul>
+            <button class="signIn">SIGN</button>
+            <div class="cart">
+                <img src="img/shipping-and-delivery.png" alt="">
+                <div id="cartQuantity">5</div>
+            </div>
+        </div>
+    </div>
+    
+     <div class="lowerTopBar">
+            <ul>
+                <li>COMPUTER</li>
+                <li>CLOTH</li>
+                <li>ELECTRONICS</li>
+                <li>FASHION</li>
+            </ul>
+     </div>
+
+     <div class="advertise">
+        <img name="letsc" alt="" id="advertiseImg">
+        
+            <div  class="advertDot" id="adv0"></div>
+            <div  class="advertDot" id="adv1"></div>
+            <div  class="advertDot" id="adv2"></div>
+            <div  class="advertDot" id="adv3"></div>
+    
+     </div>
+      <div class="products">
+          <div id="product1">
+              <div id="desc">LATEST MOBILES AND GADGETS</div>
+              <div id="part1" style="display: flex; justify-content: center;align-items: center;"><img src="img/photo-1567581935884-3349723552ca.jpg" alt="">hiii</div>
+              <div id="part2" style="display: flex; justify-content: center;align-items: center;"><img src="img/photo-1511707171634-5f897ff02aa9.jpg" alt=""></div>
+              <div id="part3" style="display: flex; justify-content: center;align-items: center;"><img src="img/photo-1529653762956-b0a27278529c.jpg" alt=""></div>
+              <div style="display: flex; justify-content: center;align-items: center;">4</div>
+          </div>
+          <div id="product2">2</div>
+          <div id="product3">3</div>
+          <div id="product4">4</div>
+          <div id="product5">5</div>
+          <div id="product6">6</div>
+      </div>
+    </div>
+
+     <div id="hiddenBody">
+
+
+        <div id="mobilePage">
+
+            <div class="topBar">
+                <div class="navLogo">
+                    <img src="img/iconfinder__shopping_1156660.png" alt="">
+                </div>
+                <div class="searchBlock">
+                    <img src="img/iconfinder_search_322497.png" alt="">
+                    <input type="text" id="search">
+               </div>
+                <div class="navLink">
+                    <ul>
+                        <li>HOME </li>
+                        <li>ABOUT </li>
+                        <li>ORDERS</li>
+                    </ul>
+                    <button class="signIn">SIGN</button>
+                    <div class="cart">
+                        <img src="img/shipping-and-delivery.png" alt="">
+                        <div id="cartQuantity">5</div>
+                    </div>
+                </div>
+            </div>
+             this is mobile page
+        </div>
+
+        <div id="electronicsPage">
+
+            <div class="topBar">
+                <div class="navLogo">
+                    <img src="img/iconfinder__shopping_1156660.png" alt="">
+                </div>
+                <div class="searchBlock">
+                    <img src="img/iconfinder_search_322497.png" alt="">
+                    <input type="text" id="search">
+               </div>
+                <div class="navLink">
+                    <ul>
+                        <li>HOME </li>
+                        <li>ABOUT </li>
+                        <li>ORDERS</li>
+                    </ul>
+                    <button class="signIn">SIGN</button>
+                    <div class="cart">
+                        <img src="img/shipping-and-delivery.png" alt="">
+                        <div id="cartQuantity">5</div>
+                    </div>
+                </div>
+            </div>
+            this is electronics page
+        </div>
+    </div>
+
+    <script>
+        let i=0;
+        var image=[];
+         document.getElementById("search").addEventListener("click",()=>{
+            document.getElementById("search").style.setProperty('--widPer',100);
+            document.getElementById("search").style.setProperty('background-color',"red");
+            document.getElementById("search").style.setProperty('border',"2px solid white");
+           
+         })
+
+         document.getElementById("search").addEventListener("blur",()=>{
+            document.getElementById("search").style.setProperty('--widPer',20);
+            document.getElementById("search").style.setProperty('background-color',"skyblue");
+            document.getElementById("search").style.setProperty('border',"none");
+         })
+
+          image[0]="img/7b8e5d1df0df2689.jpg";
+          image[1]="img/24May_Audio_Store_W_Hero_DC.jpg";
+          image[2]="img/Homegym_hbd_rb_19may.jpg";
+          image[3]="img/kitchen_hbd_rb_24may.jpg";
+          
+          function adver(){
+              if(i===0){
+               document.getElementById("adv0").style.backgroundColor="red";
+               document.getElementById("adv1").style.backgroundColor="darkkhaki";
+               document.getElementById("adv2").style.backgroundColor="darkkhaki";
+               document.getElementById("adv3").style.backgroundColor="darkkhaki";
+              }
+              else if(i===1){
+                document.getElementById("adv1").style.backgroundColor="black";
+                document.getElementById("adv0").style.backgroundColor="darkkhaki";
+                document.getElementById("adv2").style.backgroundColor="darkkhaki";
+                document.getElementById("adv3").style.backgroundColor="darkkhaki";
+              }
+              else if(i===2){
+                document.getElementById("adv2").style.backgroundColor="salmon";
+                document.getElementById("adv0").style.backgroundColor="darkkhaki";
+                document.getElementById("adv1").style.backgroundColor="darkkhaki";
+                document.getElementById("adv3").style.backgroundColor="darkkhaki";
+              }
+              else if(i===3){
+                document.getElementById("adv3").style.backgroundColor="blue";
+                document.getElementById("adv0").style.backgroundColor="darkkhaki";
+                document.getElementById("adv1").style.backgroundColor="darkkhaki";
+                document.getElementById("adv2").style.backgroundColor="darkkhaki";
+              }
+              document.letsc.src=image[i];
+            if(i<=2){
+              i++;
+            }
+            else if(i>=3){
+              i=0;  
+            }       
+          }
+          setInterval(adver,3500);
+
+          document.getElementById("product1").addEventListener("click",()=>{
+              document.getElementById("homePage").style.display="none";
+              document.getElementById("mobilePage").style.zIndex="1";
+              document.getElementById("hiddenBody").style.display="grid";
+               
+          })
+          document.getElementById("product2").addEventListener("click",()=>{
+              document.getElementById("homePage").style.display="none";
+              document.getElementById("electronicsPage").style.zIndex="1";
+              document.getElementById("hiddenBody").style.display="grid";
+          })
+          
+    </script>
+</body>
+</html>
